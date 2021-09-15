@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+    {{>navbar}}
+    <!-- Main Header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter City Name" autocomplete="off">
+                        <input type="submit" value="search" id="submit_btn">
+                    </form>
+                </div>
+                <div class="temp_info">
+                    <div class="top_layer">
+                        <p id="day"> Monday </p>
+                        <p id="today_date"> 10/10/2021 </p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name"> Get output </p>
+                        <div class="middle_layer">
+                            <p id="temp"><span>0</span> <sup>o</sup>C</p>
+                            <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{>footer}}
+    <script src="js\main.js"></script>
+    <script>
+        const day = document.getElementById('day');
+        const date = document.getElementById('today_date');
+        //find day name
+        const getCurrentDate = () => {
+            const d = new Date();
+            let weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            days = weekday[d.getDay()];
+            day.innerText = days;
+
+            //find Today Date
+            let month_day = new Array(12);
+            month_day[0] = "Jan";
+            month_day[1] = "Feb";
+            month_day[2] = "March";
+            month_day[3] = "April";
+            month_day[4] = "May";
+            month_day[5] = "June";
+            month_day[6] = "July";
+            month_day[7] = "Aug";
+            month_day[8] = "Sept";
+            month_day[9] = "Oct";
+            month_day[10] = "Nov";
+            month_day[11] = "Dec";
+            month = month_day[d.getMonth()];
+            date.innerText = `${d.getDate()}  ${month}  ${d.getFullYear()}`;
+        }
+        getCurrentDate()
+    </script>
+</body>
+
+</html>

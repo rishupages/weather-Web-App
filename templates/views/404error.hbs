@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+    {{!-- For Nav Bar --}}
+    {{>navbar}}
+
+    <!-- Main Header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- Left Side Div -->
+                    <div class="col-md-6 col-12 main_header_left">
+                        <figure style="margin-left: 225px;margin-top: -50px;">
+                            <img src="images/404 page.jpg" alt="" clss="img-fluid" title="Weather App">
+                        </figure>
+                        <p style="margin-left:300px;color:brown;font-size:larger"> {{errmsg}} </p>
+                        <a href="/"><button style="margin-left: 320px;"> Go Back </button></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Footer Part -->
+    {{>footer}}
+</body>
+
+</html>
